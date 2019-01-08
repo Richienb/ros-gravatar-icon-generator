@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="theme-color" content="#3F51B5">
+
+    <title>ROS Data Waster</title>
+    <meta name="description" content="The most straightforward way to waste all of your data.">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@0.42.1/dist/material-components-web.min.css">
+
+    <style>
+        :root {
+            --mdc-theme-primary: #3f51b5;
+            --mdc-theme-secondary: #f44336;
+            --mdc-theme-on-primary: #ffffff;
+            --mdc-theme-on-secondary: #ffffff;
+        }
+
+        :root body {
+            background-color: #3f51b5;
+        }
+
+        :root body main {
+            background-color: #ffffff;
+            border-radius: 4px;
+            margin: 20px;
+            min-width: calc(100vw - 80px);
+            min-height: calc(100vh - 80px);
+            padding: 20px;
+        }
+
+        .mdc-text-field, .mdc-select, .mdc-select__menu {
+            width: 100%;
+        }
+    </style>
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+</head>
+
+<body>
+
+    <main class="mdc-typography">
+        <h1 class="mdc-typography--headline1">ROS Gravatar Icon Generator</h1>
+        <p class="mdc-typography--body1">An easy to use tool that allows you to generate and download your Gravatar icon.</p>
+        <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+  <input type="text" id="tf-outlined" class="mdc-text-field__input" required>
+  <div class="mdc-notched-outline">
+    <div class="mdc-notched-outline__leading"></div>
+    <div class="mdc-notched-outline__notch">
+      <label for="tf-outlined" class="mdc-floating-label">Gravatar Username</label>
+    </div>
+    <div class="mdc-notched-outline__trailing"></div>
+  </div>
+</div>
+<br><br>
+<div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+<input type="number" min="1" value="1" id="tf-outlined" class="mdc-text-field__input" required>
+<div class="mdc-notched-outline">
+<div class="mdc-notched-outline__leading"></div>
+<div class="mdc-notched-outline__notch">
+<label for="tf-outlined" class="mdc-floating-label">Image size in pixels</label>
+</div>
+<div class="mdc-notched-outline__trailing"></div>
+</div>
+</div>
+<br><br>
+<div class="mdc-select mdc-select--outlined mdc-select--required" data-mdc-auto-init="MDCSelect">
+    <input type="hidden" name="enhanced-select" required>
+  <i class="mdc-select__dropdown-icon"></i>
+  <div id="demo-selected-text" class="mdc-select__selected-text" role="button" aria-haspopup="listbox" aria-labelledby="demo-label demo-selected-text"></div>
+  <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+    <ul class="mdc-list">
+      <li class="mdc-list-item" data-value="404" role="option" data-mdc-auto-init="MDCRipple">404</li>
+      <li class="mdc-list-item mdc-list-item--selected" data-value="mp" role="option" data-mdc-auto-init="MDCRipple">Mystery Person</li>
+      <li class="mdc-list-item" data-value="identicon" role="option" data-mdc-auto-init="MDCRipple">Identicon</li>
+      <li class="mdc-list-item" data-value="mnsterid" role="option" data-mdc-auto-init="MDCRipple">Monster ID</li>
+      <li class="mdc-list-item" data-value="wavatar" role="option" data-mdc-auto-init="MDCRipple">Wavatar</li>
+      <li class="mdc-list-item" data-value="retro" role="option" data-mdc-auto-init="MDCRipple">Retro</li>
+      <li class="mdc-list-item" data-value="robohash" role="option" data-mdc-auto-init="MDCRipple">Robohash</li>
+      <li class="mdc-list-item" data-value="blank" role="option" data-mdc-auto-init="MDCRipple">Blank</li>
+    </ul>
+  </div>
+   <div class="mdc-notched-outline">
+     <div class="mdc-notched-outline__leading"></div>
+     <div class="mdc-notched-outline__notch">
+       <label class="mdc-floating-label">Fallback image</label>
+     </div>
+     <div class="mdc-notched-outline__trailing"></div>
+   </div>
+</div>
+<br><br>
+<div class="mdc-select mdc-select--outlined mdc-select--required" data-mdc-auto-init="MDCSelect">
+    <input type="hidden" name="enhanced-select" required>
+  <i class="mdc-select__dropdown-icon"></i>
+  <div id="demo-selected-text" class="mdc-select__selected-text" role="button" aria-haspopup="listbox" aria-labelledby="demo-label demo-selected-text"></div>
+  <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
+    <ul class="mdc-list">
+      <li class="mdc-list-item mdc-list-item--selected" data-value="g" role="option" data-mdc-auto-init="MDCRipple">General Audiences</li>
+      <li class="mdc-list-item" data-value="pg" role="option" data-mdc-auto-init="MDCRipple">Parental Guidance Suggested</li>
+      <li class="mdc-list-item" data-value="r" role="option" data-mdc-auto-init="MDCRipple">Restricted</li>
+      <li class="mdc-list-item" data-value="x" role="option" data-mdc-auto-init="MDCRipple">Adults Only</li>
+    </ul>
+  </div>
+   <div class="mdc-notched-outline">
+     <div class="mdc-notched-outline__leading"></div>
+     <div class="mdc-notched-outline__notch">
+       <label class="mdc-floating-label">Rating</label>
+     </div>
+     <div class="mdc-notched-outline__trailing"></div>
+   </div>
+</div>
+
+<img src="" alt="">
+    </main>
+
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <script src="https://unpkg.com/material-components-web@0.42.1/dist/material-components-web.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        window.mdc.autoInit();
+    </script>
+
+</body>
+
+</html>
